@@ -1,0 +1,29 @@
+{
+  "name": "patrikkrupar",
+  "version": "1.0.0",
+  "description": "Personal web for myself",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "node-sass -o src/styles src/styles/main.scss -w",
+    "server": "live-server --open=src",
+    "dev": "concurrently \"npm run server\" \"npm run sass\""
+  },
+  "dependencies": {
+    "concurrently": "^2.2.0"
+  },
+  "devDependencies": {
+    "node-sass": "^3.8.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lietosmrdi/patrikkrupar.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lietosmrdi/patrikkrupar/issues"
+  },
+  "homepage": "https://github.com/lietosmrdi/patrikkrupar#readme"
+}

@@ -1,0 +1,77 @@
+@import "functions";
+
+$color-background: #FFF;
+$color-text: #48484a;
+$color-headline: #353535;
+$color-link: #0012ed;
+
+$fontSize-title      : rem(42px);
+$fontSize-headline   : rem(23px);
+$fontSize-subHeadline: rem(18px);
+$fontSize            : rem(16px);
+$fontSize-smaller    : rem(12px);
+
+$baseline : rem(26px);
+$line-height: $baseline / $fontSize;
+$gutter: rem(13px);
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 100%;
+	box-sizing: inherit;
+}
+
+body {
+	background: $color-background;
+	color: $color-text;
+	font-family: "Rubik", sans-serif;
+	font-size: $fontSize;
+	line-height: $line-height;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.title {
+	font-size: $fontSize-title;
+	color: $color-headline;
+	line-height: 1.1;
+	margin-bottom: $baseline;
+}
+
+.link {
+	color: $color-link;
+	text-decoration: underline;
+}
+
+.header {
+	display: flex;
+	margin-bottom: 1.5rem;
+	align-items: center;
+	.title .link { 
+		color: inherit;
+		font-weight: 400;
+		text-decoration: none;
+	}
+}
+
+.header-image {
+	flex-shrink: 0;
+	width: 240px;
+	margin-right: $gutter;
+}
+
+.container {
+	max-width: 700px;
+	margin: 0 auto;
+	padding: 1.5rem;
+}

@@ -4,8 +4,9 @@ $color-background: #FFF;
 $color-text: #48484a;
 $color-headline: #353535;
 $color-link: #0012ed;
+$color-subtle: lighten($color-text, 25%);
 
-$fontSize-title      : rem(42px);
+$fontSize-title      : rem(60px);
 $fontSize-headline   : rem(23px);
 $fontSize-subHeadline: rem(18px);
 $fontSize            : rem(16px);
@@ -14,6 +15,7 @@ $fontSize-smaller    : rem(12px);
 $baseline : rem(26px);
 $line-height: $baseline / $fontSize;
 $gutter: rem(13px);
+$gutter-bigger: $gutter*2;
 
 *,
 *:before,
@@ -24,8 +26,12 @@ $gutter: rem(13px);
 }
 
 html {
-	font-size: 100%;
+	font-size: 90%;
 	box-sizing: inherit;
+}
+
+@media (min-width: 650px) {
+	html { font-size: 100% }
 }
 
 body {
@@ -54,24 +60,56 @@ img {
 }
 
 .header {
+	position: relative;
+	min-height: calc(100vh - #{$baseline*2});
 	display: flex;
-	margin-bottom: 1.5rem;
-	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
 	.title .link { 
-		color: inherit;
+		color: $color-subtle;
 		font-weight: 400;
+		font-size: $fontSize-subHeadline;
+		letter-spacing: rem(5px);
 		text-decoration: none;
+	}
+	p { font-size: rem(27px) }
+}
+
+@media (min-width: 724px) {
+	.header  {
+		text-align: left;
+	}
+
+	.header .title,
+	.header p {
+		margin-left: 8rem;
+	}
+
+	.header-image {
+		position: absolute;
+		flex-shrink: 0;
+	}
+
+	.header-intro {
+		display: flex;
+		align-items: center;
 	}
 }
 
+
 .header-image {
-	flex-shrink: 0;
-	width: 240px;
-	margin-right: $gutter;
+	width: rem(100px);
 }
 
 .container {
 	max-width: 700px;
 	margin: 0 auto;
-	padding: 1.5rem;
+	padding: $baseline $gutter;
+}
+
+@media (min-width: 650px) {
+	.container {
+		padding: $baseline $gutter-bigger;
+	}
 }

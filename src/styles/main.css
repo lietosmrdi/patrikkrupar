@@ -6,8 +6,12 @@
   padding: 0; }
 
 html {
-  font-size: 100%;
+  font-size: 90%;
   box-sizing: inherit; }
+
+@media (min-width: 650px) {
+  html {
+    font-size: 100%; } }
 
 body {
   background: #FFF;
@@ -21,7 +25,7 @@ img {
   height: auto; }
 
 .title {
-  font-size: 2.625rem;
+  font-size: 3.75rem;
   color: #353535;
   line-height: 1.1;
   margin-bottom: 1.625rem; }
@@ -31,20 +35,42 @@ img {
   text-decoration: underline; }
 
 .header {
+  position: relative;
+  min-height: calc(100vh - 3.25rem);
   display: flex;
-  margin-bottom: 1.5rem;
-  align-items: center; }
+  flex-direction: column;
+  justify-content: center;
+  text-align: center; }
   .header .title .link {
-    color: inherit;
+    color: #87878a;
     font-weight: 400;
+    font-size: 1.125rem;
+    letter-spacing: 0.3125rem;
     text-decoration: none; }
+  .header p {
+    font-size: 1.6875rem; }
+
+@media (min-width: 724px) {
+  .header {
+    text-align: left; }
+  .header .title,
+  .header p {
+    margin-left: 8rem; }
+  .header-image {
+    position: absolute;
+    flex-shrink: 0; }
+  .header-intro {
+    display: flex;
+    align-items: center; } }
 
 .header-image {
-  flex-shrink: 0;
-  width: 240px;
-  margin-right: 0.8125rem; }
+  width: 6.25rem; }
 
 .container {
   max-width: 700px;
   margin: 0 auto;
-  padding: 1.5rem; }
+  padding: 1.625rem 0.8125rem; }
+
+@media (min-width: 650px) {
+  .container {
+    padding: 1.625rem 1.625rem; } }

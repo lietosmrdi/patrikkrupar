@@ -1,21 +1,6 @@
-@import "functions";
-
-$color-background: #FFF;
-$color-text: #48484a;
-$color-headline: #353535;
-$color-link: #0012ed;
-$color-subtle: lighten($color-text, 25%);
-
-$fontSize-title      : rem(60px);
-$fontSize-headline   : rem(23px);
-$fontSize-subHeadline: rem(18px);
-$fontSize            : rem(16px);
-$fontSize-smaller    : rem(12px);
-
-$baseline : rem(26px);
-$line-height: $baseline / $fontSize;
-$gutter: rem(13px);
-$gutter-bigger: $gutter*2;
+@import 
+	"functions",
+	"variables";
 
 *,
 *:before,
@@ -26,11 +11,15 @@ $gutter-bigger: $gutter*2;
 }
 
 html {
-	font-size: 90%;
+	font-size: 80%;
 	box-sizing: inherit;
 }
 
-@media (min-width: 650px) {
+@media (min-width: $brp-sm) {
+	html { font-size: 90% }
+}
+
+@media (min-width: $brp-md) {
 	html { font-size: 100% }
 }
 
@@ -47,28 +36,42 @@ img {
 	height: auto;
 }
 
+a {
+	color: $color-link;
+	text-decoration: underline;
+	&:visited { color: $color-visited }
+}
+
+.container {
+	display: block;
+	max-width: 700px;
+	margin: 0 auto;
+	padding: $baseline $gutter;
+}
+
+@media (min-width: $brp-md) {
+	.container { padding: $baseline $gutter-bigger }
+}
+
 .title {
 	font-size: $fontSize-title;
 	color: $color-headline;
-	line-height: 1.1;
+	line-height: $lineHeight-title;
 	margin-bottom: $baseline;
-}
-
-.link {
-	color: $color-link;
-	text-decoration: underline;
 }
 
 .header {
 	position: relative;
+	// Compensate top & bottom padding. Don't like scroll bar.
 	min-height: calc(100vh - #{$baseline*2});
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	text-align: center;
-	.title .link { 
+	.title { margin: 0 }
+	.header-name a { 
+		display: inline-block;
 		color: $color-subtle;
-		font-weight: 400;
 		font-size: $fontSize-subHeadline;
 		letter-spacing: rem(5px);
 		text-decoration: none;
@@ -76,40 +79,23 @@ img {
 	p { font-size: rem(27px) }
 }
 
-@media (min-width: 724px) {
-	.header  {
-		text-align: left;
-	}
+.header-intro { margin-bottom: $baseline }
+.header-image { width: rem(100px) }
 
-	.header .title,
-	.header p {
-		margin-left: 8rem;
-	}
+@media (min-width: $brp-md) {
+	.header { text-align: left }
+
+	.header-name,
+	.header p { margin-left: 8rem }
+
+	.header-intro { position: relative }
 
 	.header-image {
+		display: block;
+		top: 50%;
+		left: 0;
+		transform: translate3d(0, -50%, 0);
 		position: absolute;
 		flex-shrink: 0;
-	}
-
-	.header-intro {
-		display: flex;
-		align-items: center;
-	}
-}
-
-
-.header-image {
-	width: rem(100px);
-}
-
-.container {
-	max-width: 700px;
-	margin: 0 auto;
-	padding: $baseline $gutter;
-}
-
-@media (min-width: 650px) {
-	.container {
-		padding: $baseline $gutter-bigger;
 	}
 }

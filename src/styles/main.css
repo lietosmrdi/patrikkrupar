@@ -6,15 +6,19 @@
   padding: 0; }
 
 html {
-  font-size: 90%;
+  font-size: 80%;
   box-sizing: inherit; }
+
+@media (min-width: 430px) {
+  html {
+    font-size: 90%; } }
 
 @media (min-width: 650px) {
   html {
     font-size: 100%; } }
 
 body {
-  background: #FFF;
+  background: #fff;
   color: #48484a;
   font-family: "Rubik", sans-serif;
   font-size: 1rem;
@@ -24,15 +28,27 @@ img {
   max-width: 100%;
   height: auto; }
 
+a {
+  color: #0012ed;
+  text-decoration: underline; }
+  a:visited {
+    color: #851eef; }
+
+.container {
+  display: block;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1.625rem 0.8125rem; }
+
+@media (min-width: 650px) {
+  .container {
+    padding: 1.625rem 1.625rem; } }
+
 .title {
   font-size: 3.75rem;
   color: #353535;
   line-height: 1.1;
   margin-bottom: 1.625rem; }
-
-.link {
-  color: #0012ed;
-  text-decoration: underline; }
 
 .header {
   position: relative;
@@ -41,36 +57,35 @@ img {
   flex-direction: column;
   justify-content: center;
   text-align: center; }
-  .header .title .link {
+  .header .title {
+    margin: 0; }
+  .header .header-name a {
+    display: inline-block;
     color: #87878a;
-    font-weight: 400;
     font-size: 1.125rem;
     letter-spacing: 0.3125rem;
     text-decoration: none; }
   .header p {
     font-size: 1.6875rem; }
 
-@media (min-width: 724px) {
-  .header {
-    text-align: left; }
-  .header .title,
-  .header p {
-    margin-left: 8rem; }
-  .header-image {
-    position: absolute;
-    flex-shrink: 0; }
-  .header-intro {
-    display: flex;
-    align-items: center; } }
+.header-intro {
+  margin-bottom: 1.625rem; }
 
 .header-image {
   width: 6.25rem; }
 
-.container {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 1.625rem 0.8125rem; }
-
 @media (min-width: 650px) {
-  .container {
-    padding: 1.625rem 1.625rem; } }
+  .header {
+    text-align: left; }
+  .header-name,
+  .header p {
+    margin-left: 8rem; }
+  .header-intro {
+    position: relative; }
+  .header-image {
+    display: block;
+    top: 50%;
+    left: 0;
+    transform: translate3d(0, -50%, 0);
+    position: absolute;
+    flex-shrink: 0; } }

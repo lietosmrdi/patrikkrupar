@@ -1,0 +1,22 @@
+$color-background: #fff;
+$color-text      : #48484a;
+$color-headline  : #353535;
+$color-link      : #0012ed;
+$color-visited   : #851eef;
+$color-subtle    : lighten($color-text, 25%);
+
+$fontSize-title      : rem(60px);
+$fontSize-headline   : rem(23px);
+$fontSize-subHeadline: rem(18px);
+$fontSize            : rem(16px);
+$fontSize-smaller    : rem(12px);
+
+$lineHeight-title: 1.1;
+
+$baseline     : rem(26px);
+$line-height  : $baseline / $fontSize;
+$gutter       : rem(13px);
+$gutter-bigger: $gutter*2;
+
+$brp-sm: 430px;
+$brp-md: 650px;

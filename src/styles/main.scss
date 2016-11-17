@@ -80,7 +80,11 @@ a {
 }
 
 .header-intro { margin-bottom: $baseline }
-.header-image { width: rem(100px) }
+
+.header-image { 
+	width: rem(100px);
+	margin-bottom: $baseline; 
+}
 
 @media (min-width: $brp-md) {
 	.header { text-align: left }
@@ -97,5 +101,16 @@ a {
 		transform: translate3d(0, -50%, 0);
 		position: absolute;
 		flex-shrink: 0;
+		marign: 0;
 	}
+}
+
+.logo {
+    width: rem(160px);
+    display: block;
+	margin: $baseline auto 0;
+}
+
+@media (min-width: $brp-md) {
+	.logo { margin: $baseline 0 0 auto }
 }

@@ -1,2 +1,2 @@
 # patrikkrupar
-Personal web for myself
+my web

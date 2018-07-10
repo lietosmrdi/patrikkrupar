@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "node-sass -o src/styles src/styles/main.scss -w",
     "server": "live-server --open=src",
-    "dev": "concurrently \"yarn server\" \"yarn sass\""
+    "dev": "concurrently \"yarn server\" \"yarn sass\"",
+    "build": "node-sass -o src/styles src/styles/main.scss"
   },
   "dependencies": {
     "concurrently": "^2.2.0",

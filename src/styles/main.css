@@ -61,9 +61,10 @@ a {
     margin: 0; }
   .header .header-name a {
     display: inline-block;
-    color: #87878a;
-    font-size: 1.125rem;
-    letter-spacing: 0.3125rem;
+    color: #d4d4d4;
+    font-size: 0.875rem;
+    letter-spacing: 0.0625rem;
+    text-transform: uppercase;
     text-decoration: none; }
   .header p {
     font-size: 1.6875rem; }
@@ -90,13 +91,23 @@ a {
     transform: translate3d(0, -50%, 0);
     position: absolute;
     flex-shrink: 0;
-    marign: 0; } }
+    margin: 0; } }
 
 .logo {
+  position: fixed;
+  right: 3.125rem;
+  bottom: 3.125rem;
   width: 10rem;
-  display: block;
-  margin: 1.625rem auto 0; }
+  display: block; }
 
-@media (min-width: 650px) {
-  .logo {
-    margin: 1.625rem 0 0 auto; } }
+a.subButton {
+  margin-left: 8rem;
+  margin-top: 3.25rem;
+  display: inline-flex;
+  padding: 15px 20px;
+  text-decoration: none;
+  border-radius: 2px;
+  border-radius: 2px;
+  color: #353535;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.28);
+  font-size: 1.25rem; }

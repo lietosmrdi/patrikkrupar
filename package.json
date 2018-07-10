@@ -1,16 +1,17 @@
 {
   "name": "patrikkrupar",
   "version": "1.0.0",
-  "description": "Personal web for myself",
+  "description": "web",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "node-sass -o src/styles src/styles/main.scss -w",
     "server": "live-server --open=src",
-    "dev": "concurrently \"npm run server\" \"npm run sass\""
+    "dev": "concurrently \"yarn server\" \"yarn sass\""
   },
   "dependencies": {
-    "concurrently": "^2.2.0"
+    "concurrently": "^2.2.0",
+    "live-server": "^1.2.0"
   },
   "devDependencies": {
     "node-sass": "^3.8.0"

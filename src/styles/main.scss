@@ -71,9 +71,10 @@ a {
 	.title { margin: 0 }
 	.header-name a { 
 		display: inline-block;
-		color: $color-subtle;
-		font-size: $fontSize-subHeadline;
-		letter-spacing: rem(5px);
+		color: #d4d4d4;
+		font-size: rem(14px);
+		letter-spacing: rem(1px);
+		text-transform: uppercase;
 		text-decoration: none;
 	}
 	p { font-size: rem(27px) }
@@ -101,16 +102,30 @@ a {
 		transform: translate3d(0, -50%, 0);
 		position: absolute;
 		flex-shrink: 0;
-		marign: 0;
+		margin: 0;
 	}
 }
 
 .logo {
+	position: fixed;
+	right: rem(50px);
+	bottom: rem(50px);
     width: rem(160px);
     display: block;
-	margin: $baseline auto 0;
 }
 
 @media (min-width: $brp-md) {
-	.logo { margin: $baseline 0 0 auto }
+}
+
+a.subButton {
+	margin-left: 8rem;
+	margin-top: $baseline*2;
+	display: inline-flex;
+	padding: 15px 20px;
+	text-decoration: none;
+	border-radius: 2px;
+    border-radius: 2px;
+    color: #353535;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.28);
+    font-size: rem(20px);
 }

@@ -45,7 +45,7 @@ a {
     padding: 1.625rem 1.625rem; } }
 
 .title {
-  font-size: 3.75rem;
+  font-size: 3.125rem;
   color: #353535;
   line-height: 1.1;
   margin-bottom: 1.625rem; }
@@ -59,7 +59,7 @@ a {
   text-align: center; }
   .header .title {
     margin: 0; }
-  .header .header-name a {
+  .header .header-name span {
     display: inline-block;
     color: #d4d4d4;
     font-size: 0.875rem;
@@ -67,14 +67,15 @@ a {
     text-transform: uppercase;
     text-decoration: none; }
   .header p {
-    font-size: 1.6875rem; }
+    font-size: 1.5rem; }
 
 .header-intro {
   margin-bottom: 1.625rem; }
 
 .header-image {
-  width: 6.25rem;
-  margin-bottom: 1.625rem; }
+  width: 5.625rem;
+  margin-bottom: 1.625rem;
+  border-radius: 999px; }
 
 @media (min-width: 650px) {
   .header {
@@ -100,6 +101,10 @@ a {
   width: 10rem;
   display: block; }
 
+@media (max-width: 650px) {
+  .logo {
+    display: none; } }
+
 a.subButton {
   margin-left: 8rem;
   margin-top: 3.25rem;
@@ -107,7 +112,16 @@ a.subButton {
   padding: 15px 20px;
   text-decoration: none;
   border-radius: 2px;
-  border-radius: 2px;
   color: #353535;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.28);
-  font-size: 1.25rem; }
+  border: 3px solid #f0f0f0;
+  font-size: 1.25rem;
+  text-shadow: 2px 2px rgba(126, 0, 255, 0.14902);
+  font-weight: 600;
+  transition: 2000ms ease box-shadow, 200ms ease transform; }
+  a.subButton:hover {
+    transform: scale(1.01);
+    box-shadow: 0 4px 100px 0 rgba(0, 0, 0, 0.2); }
+
+@media (max-width: 650px) {
+  a.subButton {
+    margin: 1.625rem auto 0; } }

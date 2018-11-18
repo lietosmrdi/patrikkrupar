@@ -1,6 +1,4 @@
-@import 
-	"functions",
-	"variables";
+@import "functions", "variables";
 
 *,
 *:before,
@@ -16,11 +14,15 @@ html {
 }
 
 @media (min-width: $brp-sm) {
-	html { font-size: 90% }
+	html {
+		font-size: 90%;
+	}
 }
 
 @media (min-width: $brp-md) {
-	html { font-size: 100% }
+	html {
+		font-size: 100%;
+	}
 }
 
 body {
@@ -39,7 +41,9 @@ img {
 a {
 	color: $color-link;
 	text-decoration: underline;
-	&:visited { color: $color-visited }
+	&:visited {
+		color: $color-visited;
+	}
 }
 
 .container {
@@ -50,7 +54,9 @@ a {
 }
 
 @media (min-width: $brp-md) {
-	.container { padding: $baseline $gutter-bigger }
+	.container {
+		padding: $baseline $gutter-bigger;
+	}
 }
 
 .title {
@@ -63,13 +69,15 @@ a {
 .header {
 	position: relative;
 	// Compensate top & bottom padding. Don't like scroll bar.
-	min-height: calc(100vh - #{$baseline*2});
+	min-height: calc(100vh - #{$baseline * 2});
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	text-align: center;
-	.title { margin: 0 }
-	.header-name a { 
+	.title {
+		margin: 0;
+	}
+	.header-name span {
 		display: inline-block;
 		color: #d4d4d4;
 		font-size: rem(14px);
@@ -77,23 +85,34 @@ a {
 		text-transform: uppercase;
 		text-decoration: none;
 	}
-	p { font-size: rem(27px) }
+	p {
+		font-size: rem(24px);
+	}
 }
 
-.header-intro { margin-bottom: $baseline }
+.header-intro {
+	margin-bottom: $baseline;
+}
 
-.header-image { 
-	width: rem(100px);
-	margin-bottom: $baseline; 
+.header-image {
+	width: rem(90px);
+	margin-bottom: $baseline;
+	border-radius: 999px;
 }
 
 @media (min-width: $brp-md) {
-	.header { text-align: left }
+	.header {
+		text-align: left;
+	}
 
 	.header-name,
-	.header p { margin-left: 8rem }
+	.header p {
+		margin-left: 8rem;
+	}
 
-	.header-intro { position: relative }
+	.header-intro {
+		position: relative;
+	}
 
 	.header-image {
 		display: block;
@@ -110,22 +129,38 @@ a {
 	position: fixed;
 	right: rem(50px);
 	bottom: rem(50px);
-    width: rem(160px);
-    display: block;
+	width: rem(160px);
+	display: block;
 }
 
-@media (min-width: $brp-md) {
+@media (max-width: $brp-md) {
+	.logo {
+		display: none;
+	}
 }
 
 a.subButton {
 	margin-left: 8rem;
-	margin-top: $baseline*2;
+	margin-top: $baseline * 2;
 	display: inline-flex;
 	padding: 15px 20px;
 	text-decoration: none;
 	border-radius: 2px;
-    border-radius: 2px;
-    color: #353535;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.28);
-    font-size: rem(20px);
+	color: #353535;
+	border: 3px solid #f0f0f0;
+	font-size: rem(20px);
+	text-shadow: 2px 2px rgba(126, 0, 255, 0.14901960784313725);
+	font-weight: 600;
+	transition: 2000ms ease box-shadow, 200ms ease transform;
+
+	&:hover {
+		transform: scale(1.01);
+		box-shadow: 0 4px 100px 0 rgba(0, 0, 0, 0.2);
+	}
+}
+
+@media (max-width: $brp-md) {
+	a.subButton {
+		margin: $baseline auto 0;
+	}
 }
